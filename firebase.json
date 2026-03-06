@@ -9,6 +9,7 @@
     {
       "source": "functions",
       "codebase": "default",
+      "invoker": "public",
       "disallowLegacyRuntimeConfig": true,
       "ignore": [
         "node_modules",
