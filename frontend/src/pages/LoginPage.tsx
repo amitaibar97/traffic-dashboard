@@ -10,8 +10,21 @@ export const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const navigate = useNavigate();
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    //todo: add better typing for event
+  const loginValues = {
+    email: {
+      placeholder: "Email",
+      type: "email",
+      onChange: setEmail,
+      value: email,
+    },
+    password: {
+      placeholder: "Password",
+      type: "password",
+      onChange: setPassword,
+      value: password,
+    },
+  };
+  const handleLogin = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -22,21 +35,26 @@ export const LoginPage = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <Input
-        placeholder="Email"
-        value={email}
-        onChange={setEmail}
-        type="email"
-      />
-      <Input
-        placeholder="Password"
-        value={password}
-        onChange={setPassword}
-        type="password"
-      />
-      {errorMessage && <p>{errorMessage}</p>}
-      <button type="submit">Login</button>
-    </form>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+          Sign In
+        </h1>
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+          {Object.entries(loginValues).map(([key, props]) => (
+            <Input key={key} {...props} containerClassName="w-full" inputClassName="w-full input-md" />
+          ))}
+          {errorMessage && (
+            <p className="error-message">{errorMessage}</p>
+          )}
+          <button
+            type="submit"
+            className="submit-button"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
