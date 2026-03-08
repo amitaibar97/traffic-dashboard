@@ -1,17 +1,36 @@
+import type { TrafficStatInputType } from "../types/traffic";
+
 interface InputProps {
-  placeholder: string;
-  value: string;
+  value: TrafficStatInputType;
   onChange: (value: string) => void;
-  type?: string;
+  type: string;
+  placeholder?: string;
+  label?: { value: string; className?: string };
+  containerClassName?: string;
+  inputClassName?: string;
+  minValue?: number;
 }
-const Input = ({ placeholder, onChange, value, type }: InputProps) => {
+
+const Input = ({
+  placeholder,
+  onChange,
+  value,
+  type,
+  label,
+  containerClassName,
+  inputClassName,
+  minValue,
+}: InputProps) => {
   return (
-    <div>
+    <div className={containerClassName}>
+      {label && <label className={label.className}>{label.value}</label>}
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
+        className={inputClassName}
+        min={minValue}
       />
     </div>
   );
