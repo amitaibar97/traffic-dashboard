@@ -2,6 +2,7 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { trafficApi } from "../services/trafficApi";
 import { trafficKeys } from "../services/trafficKeys";
 import type { TrafficStatInput } from "../../../shared/schemas/trafficZodMiddleware";
+import { useMemo } from "react";
 
 export const useTrafficStats = () => {
   const queryClient = useQueryClient();
@@ -9,11 +10,7 @@ export const useTrafficStats = () => {
   const invalidate = () =>
     queryClient.invalidateQueries({ queryKey: trafficKeys.all });
 
-  const {
-    data: stats = [],
-    isLoading,
-    error,
-  } = useQuery({
+  const queryDetails = useQuery({
     queryKey: trafficKeys.all,
     queryFn: trafficApi.getAll,
   });
@@ -34,5 +31,8 @@ export const useTrafficStats = () => {
     onSuccess: invalidate,
   });
 
-  return { stats, isLoading, error, create, update, remove };
+  return useMemo(
+    () => ({ queryData: queryDetails, create, update, remove }),
+    [queryDetails, create, update, remove],
+  );
 };

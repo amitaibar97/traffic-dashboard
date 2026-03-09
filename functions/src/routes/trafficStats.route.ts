@@ -1,10 +1,9 @@
 import { Router, Request, Response, NextFunction } from "express";
-import { verifyTokenMiddleware } from "../middleware/auth";
+import { verifyTokenMiddleware } from "../middleware/verifyToken";
 import { TrafficStatsService } from "../services/trafficStats.service";
 import { normalizeId } from "../utils/normalizeId";
-import { zodValidatorMiddleware } from "../middleware/validate";
+import { zodValidatorMiddleware } from "../middleware/zodValidator";
 import { TrafficStatInputSchema } from "../../../shared/schemas/trafficZodMiddleware";
-import { requireEditorRole } from "../middleware/role";
 
 export const createTrafficStatsRouter = (
   service: TrafficStatsService
@@ -27,7 +26,6 @@ export const createTrafficStatsRouter = (
   router.post(
     "/",
     verifyTokenMiddleware,
-    requireEditorRole(),
     zodValidatorMiddleware(TrafficStatInputSchema),
     async (req: Request, res: Response, next: NextFunction) => {
       try {
@@ -42,7 +40,6 @@ export const createTrafficStatsRouter = (
   router.put(
     "/:id",
     verifyTokenMiddleware,
-    requireEditorRole(),
     zodValidatorMiddleware(TrafficStatInputSchema),
     async (req: Request, res: Response, next: NextFunction) => {
       try {
@@ -58,7 +55,6 @@ export const createTrafficStatsRouter = (
   router.delete(
     "/:id",
     verifyTokenMiddleware,
-    requireEditorRole(),
     async (req: Request, res: Response, next: NextFunction) => {
       try {
         const id = normalizeId(req.params.id);

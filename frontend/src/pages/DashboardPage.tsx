@@ -6,9 +6,14 @@ import { TrafficTableContainer } from "../components/Table/TrafficTableContainer
 import TrafficForm from "../components/Form/TrafficForm";
 
 export const DashboardPage = () => {
-  const { stats, isLoading, error, create, update, remove } = useTrafficStats();
-
-  if (isLoading) return <Loader fullPage/>;
+  const {
+    queryData: { data: stats = [], isLoading, error, failureReason },
+    create,
+    update,
+    remove,
+  } = useTrafficStats();
+  console.log({ error, failureReason });
+  if (isLoading) return <Loader fullPage />;
 
   if (error)
     return (
