@@ -28,6 +28,6 @@ module.exports = {
     "new-cap": "off",
     "quote-props": "off",
     "object-curly-spacing": "off",
-    "max-len": off,
+    "max-len": "off",
   },
 };

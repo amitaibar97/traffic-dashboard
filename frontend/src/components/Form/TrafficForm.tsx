@@ -1,10 +1,10 @@
 import { TRAFFIC_FIELDS } from "../../constants/traffic";
 import { useTrafficForm } from "../../customHooks/useTrafficForm";
-import { type TrafficEntry } from "../../types/traffic";
+import { type TrafficStatInput } from "../../../../shared/schemas/trafficZodMiddleware";
 import LabeledInput from "../LabeledInput";
 
 interface TrafficFormProps {
-  onSubmit: (data: TrafficEntry) => void;
+  onSubmit: (data: TrafficStatInput) => void;
 }
 
 const TrafficForm = ({ onSubmit }: TrafficFormProps) => {
