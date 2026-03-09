@@ -9,12 +9,17 @@ import { errorHandler } from "./middleware/errorHandler";
 initializeApp();
 
 const app = express();
-app.use(cors({ origin: true }));
+app.use(
+  cors({
+    origin:
+      "https://traffic-dashboard-updated-d6xwlhpft-amitaibar97s-projects.vercel.app",
+  })
+);
 app.use(express.json());
 
 const { trafficStatService } = createAppContainer();
 app.use("/traffic-stats", createTrafficStatsRouter(trafficStatService));
 
-app.use(errorHandler); 
+app.use(errorHandler);
 
 export const api = onRequest({ region: "europe-west3" }, app);
