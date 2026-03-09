@@ -23,7 +23,7 @@ export const useTableSort = (data: TrafficStat[]) => {
     const valA = sortField === TRAFFIC_FIELDS.VISITS ? a.visits : a.date;
     const valB = sortField === TRAFFIC_FIELDS.VISITS ? b.visits : b.date;
     if (valA < valB) return sortDirection === SORT_DIRECTIONS.ASC ? -1 : 1;
-    if (valA > valB) return sortDirection === SORT_DIRECTIONS.ASC ? 1 : -1;
+    if (valA > valB) return sortDirection === SORT_DIRECTIONS.ASC ? 1 : -1; //todo
     return 0;
   });
 

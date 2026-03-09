@@ -12,10 +12,10 @@ export const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-sm px-6 py-4 flex items-center justify-between">
-      <h1 className="text-xl font-bold text-gray-800">Traffic Dashboard</h1>
+      <h1 className="text-xl font-bold text-emphasized">Traffic Dashboard</h1>
       <button
         onClick={handleLogout}
-        className="text-sm text-red-500 hover:text-red-700 font-medium transition"
+        className="text-sm text-danger hover:text-danger-dark font-medium transition"
       >
         Logout
       </button>

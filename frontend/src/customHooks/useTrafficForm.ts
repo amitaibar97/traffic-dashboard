@@ -1,9 +1,10 @@
 import { useState } from "react";
+import z from "zod";
 import {
   TrafficStatInputSchema,
   type TrafficStatInput,
 } from "../../../shared/schemas/trafficZodMiddleware";
-import z from "zod";
+
 const INITIAL_STATE: TrafficStatInput = { date: "", visits: 0 };
 
 export const useTrafficForm = (onSubmit: (data: TrafficStatInput) => void) => {
@@ -19,6 +20,7 @@ export const useTrafficForm = (onSubmit: (data: TrafficStatInput) => void) => {
     e.preventDefault();
     setError("");
     const parsed = TrafficStatInputSchema.safeParse(formData);
+   
     if (!parsed.success) {
       setError(
         `Please fill in all fields correctly- ${z.treeifyError(parsed.error).errors.join(", ")}`,

@@ -14,7 +14,7 @@ const SortableHeader = ({
   onSort,
 }: SortableHeaderProps) => (
   <th
-    className="pb-3 pr-6 cursor-pointer hover:text-gray-800 transition select-none"
+    className="pb-3 pr-6 cursor-pointer hover:text-emphasized transition select-none"
     onClick={() => onSort(field)}
   >
     {label} {sortIcon(field)}

@@ -13,7 +13,7 @@ const TrafficForm = ({ onSubmit }: TrafficFormProps) => {
 
   return (
     <div className="bg-white rounded-2xl shadow-sm p-6">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">Add Entry</h2>
+      <h2 className="text-lg font-semibold text-emphasized mb-4">Add Entry</h2>
       <form onSubmit={handleSubmit} className="flex flex-wrap gap-4 items-end">
         <LabeledInput
           label="Date"
@@ -31,10 +31,10 @@ const TrafficForm = ({ onSubmit }: TrafficFormProps) => {
           InputExtraClassName="px-4 py-2"
           minValue={1}
         />
-        {error && <p className="w-full text-xs text-red-500">{error}</p>}
+        {error && <p className="w-full text-xs text-danger">{error}</p>}
         <button
           type="submit"
-          className="px-6 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition"
+          className="px-6 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary-hover transition"
         >
           Add
         </button>

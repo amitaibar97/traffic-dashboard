@@ -1,4 +1,3 @@
-/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,39 +12,39 @@
 
 @layer components {
   .input-base {
-    @apply border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition;
+    @apply border border-border rounded-input text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition;
+  }
+  .card {
+    @apply bg-border rounded-card shadow-card p-6;
+  }
+  .active-mode {
+    @apply bg-primary text-white border-primary;
+  }
+  .non-active-mode {
+    @apply text-muted border-border hover:border-primary;
+  }
+  .submit-button {
+    @apply w-full bg-primary hover:bg-primary-hover text-white font-semibold py-2 rounded-input transition;
+  }
+  .error-message {
+    @apply text-danger text-sm text-center;
+  }
+  .empty-state {
+    @apply text-center text-muted py-6;
+  }
+  .full-screen-loader {
+    @apply fixed inset-0 flex items-center justify-center bg-surface z-50;
+  }
+  .loader {
+    @apply flex items-center justify-center py-12;
+  }
+  .label {
+    @apply text-xs text-muted;
   }
   .input-sm {
     @apply input-base px-3 py-1.5;
   }
   .input-md {
     @apply input-base px-4 py-2;
-  }
-  .card {
-    @apply bg-white rounded-2xl shadow-sm p-6;
-  }
-  .label {
-    @apply text-xs text-gray-500;
-  }
-  .active-mode {
-    @apply bg-blue-500 text-white border-blue-500;
-  }
-  .non-active-mode {
-    @apply text-gray-500 border-gray-300 hover:border-blue-400;
-  }
-  .full-screen-loader {
-    @apply fixed inset-0 flex items-center justify-center bg-white z-50;
-  }
-  .loader {
-    @apply flex items-center justify-center py-12;
-  }
-  .empty-state {
-    @apply text-center text-gray-400 py-6;
-  }
-  .error-message {
-    @apply text-red-500 text-sm text-center;
-  }
-  .submit-button {
-    @apply w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition;
   }
 }

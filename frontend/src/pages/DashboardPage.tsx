@@ -13,12 +13,12 @@ export const DashboardPage = () => {
   if (error)
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-red-500">Failed to load data</p>
+        <p className="text-danger">Failed to load data</p>
       </div>
     );
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-surface">
       <Navbar />
       <main className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-8">
         <TrafficChartContainer data={stats} />

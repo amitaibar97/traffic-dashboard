@@ -24,7 +24,7 @@ export const TrafficTableContainer = ({ stats, onUpdate, onDelete }: Props) => {
 
   return (
     <div className="bg-white rounded-2xl shadow-sm p-6">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">
+      <h2 className="text-lg font-semibold text-emphasized mb-4">
         Traffic Stats
       </h2>
 
@@ -33,7 +33,7 @@ export const TrafficTableContainer = ({ stats, onUpdate, onDelete }: Props) => {
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left">
           <thead>
-            <tr className="border-b border-gray-200 text-gray-500">
+            <tr className="border-b border-border text-gray-500">
               <SortableHeader
                 field={TRAFFIC_FIELDS.DATE}
                 label="Date"

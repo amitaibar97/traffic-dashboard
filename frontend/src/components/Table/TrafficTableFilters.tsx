@@ -28,7 +28,7 @@ const TrafficTableFilters = ({
     {hasFilters && (
       <button
         onClick={onClear}
-        className="text-xs text-gray-400 hover:text-gray-600 transition"
+        className="text-xs text-muted hover:text-muted-hover transition"
       >
         Clear
       </button>

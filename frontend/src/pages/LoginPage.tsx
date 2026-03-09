@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import { useNavigate } from "react-router-dom";
@@ -24,33 +24,36 @@ export const LoginPage = () => {
       value: password,
     },
   };
-  const handleLogin = async (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
-    } catch (_error) {
-      setErrorMessage("Invalid email or password");
-    }
-  };
+  const handleLogin = useCallback(
+    async (e: React.SubmitEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        navigate("/dashboard");
+      } catch (_error) {
+        setErrorMessage("Invalid email or password");
+      }
+    },
+    [email, password, navigate],
+  );
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-surface flex items-center justify-center">
       <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+        <h1 className="text-2xl font-bold text-emphasized mb-6 text-center">
           Sign In
         </h1>
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           {Object.entries(loginValues).map(([key, props]) => (
-            <Input key={key} {...props} containerClassName="w-full" inputClassName="w-full input-md" />
+            <Input
+              key={key}
+              {...props}
+              containerClassName="w-full"
+              inputClassName="w-full input-md"
+            />
           ))}
-          {errorMessage && (
-            <p className="error-message">{errorMessage}</p>
-          )}
-          <button
-            type="submit"
-            className="submit-button"
-          >
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          <button type="submit" className="submit-button">
             Login
           </button>
         </form>

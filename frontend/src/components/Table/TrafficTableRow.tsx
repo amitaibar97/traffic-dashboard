@@ -19,7 +19,7 @@ const ActionButton = ({ onClick, className, children }: ActionButtonProps) => (
 );
 
 const StatValueTd = ({ value }: { value: TrafficStatInputType }) => (
-  <td className="py-3 pr-6 text-gray-700">{value}</td>
+  <td className="py-3 pr-6 text-text">{value}</td>
 );
 
 const EditStatValueTd = ({ children }: { children: React.ReactNode }) => (
@@ -39,13 +39,13 @@ const ViewRow = ({ stat, onEdit, onDelete }: ViewRowProps) => (
     <td className="py-3 flex gap-3">
       <button
         onClick={onEdit}
-        className="text-blue-500 hover:text-blue-700 transition"
+        className="text-primary hover:text-primary-dark transition"
       >
         Edit
       </button>
       <button
         onClick={onDelete}
-        className="text-red-500 hover:text-red-700 transition"
+        className="text-danger hover:text-danger-dark transition"
       >
         Delete
       </button>
@@ -84,13 +84,13 @@ const EditRow = ({ editData, onChange, onSave, onCancel }: EditRowProps) => (
     <td className="py-2 flex gap-2">
       <ActionButton
         onClick={onSave}
-        className="text-green-600 hover:text-green-800 font-medium"
+        className="text-success hover:text-success-hover font-medium "
       >
         Save
       </ActionButton>
       <ActionButton
         onClick={onCancel}
-        className="text-gray-400 hover:text-gray-600"
+        className="text-muted hover:text-muted-hover"
       >
         Cancel
       </ActionButton>
@@ -117,7 +117,7 @@ const TrafficTableRow = ({
   isEditing,
   ...rowProps
 }: TrafficTableRowProps) => (
-  <tr className="border-b border-gray-100 hover:bg-gray-50 transition">
+  <tr className="border-b border-border hover:bg-gray-50 transition">
     {isEditing ? (
       <EditRow {...rowProps} />
     ) : (
