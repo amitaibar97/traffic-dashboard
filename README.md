@@ -1,3 +1,106 @@
-# traffic-dashboard
+# Traffic Stats Dashboard
 
-The app will display and manage user traffic data, shown both in a table and as a chart
+A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
+
+---
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18+)
+- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
+- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
+
+---
+
+## Project Structure
+# Traffic Stats Dashboard
+
+A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
+
+---
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18+)
+- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
+- [Java JDK 17+](https://adoptium.net) *(only required if using the Firebase emulator)*
+
+---
+
+## Project Structure
+
+# Traffic Stats Dashboard
+
+A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
+
+---
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18+)
+- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
+- [Java JDK 17+](https://adoptium.net) *(only required if using the Firebase emulator)*
+
+---
+
+## Project Structure
+
+# Traffic Stats Dashboard
+
+A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
+
+---
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18+)
+- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
+- [Java JDK 17+](https://adoptium.net) *(only required if using the Firebase emulator)*
+
+---
+
+## Project Structure
+
+├── functions/ # Firebase Functions (Express backend)
+├── src/ # React frontend (Vite)
+├── shared/ # Shared Zod schemas between frontend and backend
+└── firebase.json
+
+
+---
+
+## Setup
+
+### 1. Install Dependencies
+
+```bash
+# Frontend
+npm install
+
+# Backend
+cd functions
+npm install
+
+### 2. Environment Variables
+Create .env in the root:
+
+VITE_API_BASE_URL=http://localhost:5001/YOUR_PROJECT_ID/europe-west3/api
+
+⚠️ Never commit .env files to source control.
+
+Running Locally
+Option A: Firebase Serve (no Java required)
+```bash 
+firebase serve
+
+Option B: Firebase Emulator (full suite, requires Java)
+```bash
+firebase emulators:start
