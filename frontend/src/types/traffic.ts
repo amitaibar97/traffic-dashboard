@@ -1,4 +1,4 @@
-import type { TrafficStatInput } from "../../shared/schemas/trafficZodMiddleware";
+import type { TrafficStatInput } from "../../../shared/schemas/trafficZodMiddleware";
 import {
   TRAFFIC_FIELDS,
   SORT_DIRECTIONS,

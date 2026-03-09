@@ -7,7 +7,7 @@ interface LabeledInputProps {
   type: string;
   value: TrafficStatInputType;
   onChange: (value: string) => void;
-  InputExtraClassName?: string;
+  InputExtraClassName?: React.HTMLAttributes<HTMLInputElement>["className"];
   placeholder?: string;
   minValue?: number;
 }

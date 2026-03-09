@@ -5,9 +5,9 @@ interface InputProps {
   onChange: (value: string) => void;
   type: string;
   placeholder?: string;
-  label?: { value: string; className?: string };
-  containerClassName?: string;
-  inputClassName?: string;
+  label?: { value: string; className?: React.HTMLAttributes<HTMLInputElement>['className'] };
+  containerClassName?: React.HTMLAttributes<HTMLInputElement>['className'];
+  inputClassName?: React.HTMLAttributes<HTMLInputElement>['className'];
   minValue?: number;
 }
 

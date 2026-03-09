@@ -1,3 +1,3 @@
 export const trafficKeys = {
-  all: ["trafficStats"] as const,
-};
+  all: ["trafficStats"],
+} as const;
