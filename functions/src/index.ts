@@ -4,6 +4,7 @@ import express from "express";
 import cors from "cors";
 import { createTrafficStatsRouter } from "./routes/trafficStats.route";
 import { createAppContainer } from "./container";
+import { errorHandler } from "./middleware/errorHandler";
 
 initializeApp();
 
@@ -11,8 +12,9 @@ const app = express();
 app.use(cors({ origin: true }));
 app.use(express.json());
 
-const { service } = createAppContainer();
-app.use("/traffic-stats", createTrafficStatsRouter(service));
-// app.get("/", (_req, res) => res.json({ ok: true }));
+const { trafficStatService } = createAppContainer();
+app.use("/traffic-stats", createTrafficStatsRouter(trafficStatService));
+
+app.use(errorHandler); 
 
 export const api = onRequest({ region: "europe-west3" }, app);

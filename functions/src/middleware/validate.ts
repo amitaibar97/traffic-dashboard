@@ -1,18 +1,18 @@
 import { Request, Response, NextFunction } from "express";
+import { StatusCodes } from "http-status-codes";
 import { treeifyError, ZodType } from "zod";
 
-export const validate =
+export const zodValidatorMiddleware =
   (schema: ZodType) => (req: Request, res: Response, next: NextFunction) => {
     const { data, success, error } = schema.safeParse(req.body);
 
     if (!success) {
-      res.status(400).json({
+      return res.status(StatusCodes.BAD_REQUEST).json({
         error: "Invalid request body",
         details: treeifyError(error),
       });
-      return;
     }
 
     req.body = data;
-    next();
+    return next();
   };
