@@ -16,7 +16,7 @@ export const useEditRow = () => {
   const updateField = <K extends keyof TrafficStatInput>(
     key: K,
     value: TrafficStatInput[K],
-  ) => setEditData((prev) => ({ ...prev, [key]: value }));
+  ) => setEditData((prev: TrafficStatInput) => ({ ...prev, [key]: value }));
 
   return {
     editingId,

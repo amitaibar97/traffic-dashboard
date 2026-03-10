@@ -15,7 +15,7 @@ export const useTrafficForm = (onSubmit: (data: TrafficStatInput) => void) => {
     <K extends keyof TrafficStatInput>(
       key: K,
       value: TrafficStatInput[K],
-    ) => setFormData((prev) => ({ ...prev, [key]: value })),
+    ) => setFormData((prev: TrafficStatInput) => ({ ...prev, [key]: value })),
     []
   );
 
