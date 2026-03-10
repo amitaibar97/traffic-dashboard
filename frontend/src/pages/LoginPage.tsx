@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../lib/firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../lib/firebase";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 
@@ -37,6 +37,16 @@ export const LoginPage = () => {
     [email, password, navigate],
   );
 
+  const handleGoogleLogin = useCallback(async () => {
+    try {
+      setErrorMessage("");
+      await signInWithPopup(auth, googleProvider);
+      navigate("/dashboard");
+    } catch (error) {
+      setErrorMessage("Failed to sign in with Google");
+    }
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-surface flex items-center justify-center">
       <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm">
@@ -55,6 +65,19 @@ export const LoginPage = () => {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
           <button type="submit" className="submit-button">
             Login
+          </button>
+
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="google-auth-button"
+          >
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              alt="Google"
+              className="w-5 h-5"
+            />
+            <span>Sign in with Google</span>
           </button>
         </form>
       </div>

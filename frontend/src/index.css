@@ -26,6 +26,9 @@
   .submit-button {
     @apply w-full bg-primary hover:bg-primary-hover text-white font-semibold py-2 rounded-input transition;
   }
+  .google-auth-button {
+    @apply w-full mb-4 flex items-center justify-center gap-2 border border-border rounded-md py-2 hover:bg-surface transition;
+  }
   .error-message {
     @apply text-danger text-sm text-center;
   }
