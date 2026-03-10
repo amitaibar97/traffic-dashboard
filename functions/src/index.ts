@@ -12,7 +12,7 @@ const app = express();
 app.use(
   cors({
     origin:
-      "https://traffic-dashboard-updated-d6xwlhpft-amitaibar97s-projects.vercel.app",
+      "https://traffic-dashboard-orpin.vercel.app" /* Adjust this to your frontend URL */,
   })
 );
 app.use(express.json());

@@ -7,12 +7,11 @@ import TrafficForm from "../components/Form/TrafficForm";
 
 export const DashboardPage = () => {
   const {
-    queryData: { data: stats = [], isLoading, error, failureReason },
+    queryData: { data: stats = [], isLoading, error },
     create,
     update,
     remove,
   } = useTrafficStats();
-  console.log({ error, failureReason });
   if (isLoading) return <Loader fullPage />;
 
   if (error)

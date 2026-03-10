@@ -1,4 +1,4 @@
-import { CollectionReference } from 'firebase-admin/firestore';
+import { CollectionReference } from "firebase-admin/firestore";
 
 export interface TrafficStatInput {
   date: string;
@@ -20,9 +20,8 @@ export const createFirestoreTrafficStatRepo = (
   collection: CollectionReference
 ): TrafficStatRepo => ({
   getAll: async () => {
-    console.log('Fetching all traffic stats...');
-    const snapshot = await collection.orderBy('date').get();
-    console.log('docs count:', snapshot.docs.length);
+    const snapshot = await collection.orderBy("date").get();
+
     return snapshot.docs.map((doc) => ({
       id: doc.id,
       ...(doc.data() as TrafficStatInput),
