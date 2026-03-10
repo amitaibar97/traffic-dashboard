@@ -1,60 +1,7 @@
 # Traffic Stats Dashboard
 
-A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
-
----
-
-## Prerequisites
-
-Make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v18+)
-- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
-- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
-
----
-
-## Project Structure
-
-# Traffic Stats Dashboard
-
-A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
-
----
-
-## Prerequisites
-
-Make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v18+)
-- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
-- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
-
----
-
-## Project Structure
-
-# Traffic Stats Dashboard
-
-A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
-
----
-
-## Prerequisites
-
-Make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v18+)
-- [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
-- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
-
----
-
-## Project Structure
-
-# Traffic Stats Dashboard
-
-A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
+A full-stack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
+data stored in Firestore, which holds all the stats.
 
 ---
 
@@ -106,3 +53,4 @@ Option B: Firebase Emulator (full suite, requires Java)
 ```bash
 firebase emulators:start
 ````
+Have fun, and I would like to get honest feedback :)
