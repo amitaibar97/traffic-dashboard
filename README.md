@@ -15,6 +15,7 @@ Make sure you have the following installed:
 ---
 
 ## Project Structure
+
 # Traffic Stats Dashboard
 
 A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.
@@ -27,7 +28,7 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18+)
 - [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
-- [Java JDK 17+](https://adoptium.net) *(only required if using the Firebase emulator)*
+- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
 
 ---
 
@@ -45,7 +46,7 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18+)
 - [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
-- [Java JDK 17+](https://adoptium.net) *(only required if using the Firebase emulator)*
+- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
 
 ---
 
@@ -63,7 +64,7 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18+)
 - [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
-- [Java JDK 17+](https://adoptium.net) *(only required if using the Firebase emulator)*
+- [Java JDK 17+](https://adoptium.net) _(only required if using the Firebase emulator)_
 
 ---
 
@@ -74,14 +75,13 @@ Make sure you have the following installed:
 ├── shared/ # Shared Zod schemas between frontend and backend
 └── firebase.json
 
-
 ---
 
 ## Setup
 
 ### 1. Install Dependencies
 
-```bash
+````bash
 # Frontend
 npm install
 
@@ -92,15 +92,17 @@ npm install
 ### 2. Environment Variables
 Create .env in the root:
 
-VITE_API_BASE_URL=http://localhost:5001/YOUR_PROJECT_ID/europe-west3/api
+VITE_API_BASE_URL=http://localhost:5001/traffic-dashboard-amitai/europe-west3/api
 
 ⚠️ Never commit .env files to source control.
 
 Running Locally
+
 Option A: Firebase Serve (no Java required)
-```bash 
+```bash
 firebase serve
 
 Option B: Firebase Emulator (full suite, requires Java)
 ```bash
 firebase emulators:start
+````

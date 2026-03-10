@@ -1,0 +1,23 @@
+{
+  "name": "traffic-dashboard",
+  "version": "1.0.0",
+  "description": "A fullstack web app for managing traffic statistics, built with React, Firebase Functions (v2), and Express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitaibar97/traffic-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitaibar97/traffic-dashboard/issues"
+  },
+  "homepage": "https://github.com/amitaibar97/traffic-dashboard#readme"
+}
