@@ -1,7 +1,7 @@
-// middleware/errorHandler.ts
 import { Request, Response, NextFunction } from "express";
 import { StatusCodes } from "http-status-codes";
 
+/* eslint-disable require-jsdoc */
 export class AppError extends Error {
   constructor(
     public message: string,
