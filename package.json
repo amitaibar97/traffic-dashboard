@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/amitaibar97/traffic-dashboard/issues"
   },
-  "homepage": "https://github.com/amitaibar97/traffic-dashboard#readme"
+  "homepage": "https://github.com/amitaibar97/traffic-dashboard#readme",
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
 }
