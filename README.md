@@ -28,30 +28,39 @@ Make sure you have the following installed:
 
 ### 1. Install Dependencies
 
-````bash
+```bash
 # Frontend
 npm install
 
 # Backend
 cd functions
 npm install
+```
 
 ### 2. Environment Variables
 
-Create .env in the root:
+Create `.env` in the root:
 
+```
 VITE_API_BASE_URL=http://localhost:5001/traffic-dashboard-amitai/europe-west3/api
+```
 
-⚠️ Never commit .env files to source control.
+> ⚠️ Never commit `.env` files to source control.
 
-Running Locally
+---
 
-Option A: Firebase Serve (no Java required)
+## Running Locally
+
+### Option A: Firebase Serve *(no Java required)*
+
 ```bash
 firebase serve
+```
 
-Option B: Firebase Emulator (full suite, requires Java)
+### Option B: Firebase Emulator *(full suite, requires Java)*
+
 ```bash
 firebase emulators:start
-````
+```
+
 Have fun, and I would like to get honest feedback :)
