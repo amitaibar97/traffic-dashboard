@@ -1,6 +1,11 @@
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid,
-  Tooltip, ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 import { TRAFFIC_FIELDS } from "../../constants/traffic";
 import type { TrafficStatInput } from "../../../../shared/schemas/trafficZodMiddleware";
@@ -13,7 +18,7 @@ const TrafficLineChart = ({ data }: TrafficLineChartProps) => (
   <ResponsiveContainer width="100%" height={300}>
     <LineChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+      <XAxis dataKey={TRAFFIC_FIELDS.DATE} tick={{ fontSize: 11 }} />
       <YAxis />
       <Tooltip />
       <Line

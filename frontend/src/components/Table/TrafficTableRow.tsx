@@ -79,6 +79,7 @@ const EditRow = ({ editData, onChange, onSave, onCancel }: EditRowProps) => (
         value={String(editData.visits)}
         onChange={(v) => onChange(TRAFFIC_FIELDS.VISITS, Number(v))}
         inputClassName="input-sm w-24"
+        minValue={1}
       />
     </EditStatValueTd>
     <td className="py-2 flex gap-2">

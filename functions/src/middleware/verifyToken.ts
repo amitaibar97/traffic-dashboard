@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { getAuth } from "firebase-admin/auth";
+import { StatusCodes } from "http-status-codes";
 
 export const verifyTokenMiddleware = async (
   req: Request,
@@ -8,7 +9,7 @@ export const verifyTokenMiddleware = async (
 ) => {
   const authHeader = req.headers.authorization;
   if (!authHeader?.startsWith("Bearer ")) {
-    res.status(401).json({ error: "Unauthorized" });
+    res.status(StatusCodes.UNAUTHORIZED).json({ error: "Unauthorized" });
     return;
   }
 
@@ -18,6 +19,8 @@ export const verifyTokenMiddleware = async (
     req.user = decoded;
     return next();
   } catch {
-    return res.status(401).json({ error: "Invalid token" });
+    return res
+      .status(StatusCodes.UNAUTHORIZED)
+      .json({ error: "Invalid token" });
   }
 };
